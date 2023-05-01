@@ -14,15 +14,13 @@ static RT_TASK tarea2;
 int global = 0;
 
 void tareaUno(void *arg){
-    int i;
-    for(i=0; i < ITER; i++){
+    for(int i=0; i < ITER; i++){
         printf("Tarea 1 la variable global es %d -----\n", ++global);
     }
 }
 
 void tareaDos(void *arg){
-    int i;
-    for(i=0; i < ITER; i++){
+    for(int i=0; i < ITER; i++){
         printf("Tarea 2 la variable global es %d -----\n", --global);
     }
 }
