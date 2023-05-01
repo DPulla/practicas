@@ -18,7 +18,7 @@ void tareaUno(void *arg){
     for(int i=0; i < ITER; i++){
         rt_sem_v(&sem);
         printf("Tarea 1 la variable global es ----- %d \n", ++global);
-        rt_sem_p(&sem, TM_INFINITE);
+        //rt_sem_p(&sem, TM_INFINITE);
     }
 }
 
@@ -26,12 +26,12 @@ void tareaDos(void *arg){
     for(int i=0; i < ITER; i++){
         rt_sem_v(&sem);
         printf("Tarea 2 la variable global es ----- %d \n", --global);
-        rt_sem_p(&sem, TM_INFINITE);
+        //rt_sem_p(&sem, TM_INFINITE);
     }
 }
 
 int main(int argc, char* argv[]){
-    rt_sem_create(&sem, "sem", 0 , S_PULSE);
+    rt_sem_create(&sem, "sem", 0 , S_FIFO);
     rt_task_create(&tarea1, "tarea 1", 0 , 1, 0);
     rt_task_create(&tarea2, "tarea 2", 0 , 1, 0);
     rt_task_start(&tarea1, &tareaUno,0);
