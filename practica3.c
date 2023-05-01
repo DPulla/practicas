@@ -6,7 +6,7 @@
 #include <alchemy/timer.h>
 #include <alchemy/sem.h>
 
-#define ITER 1000
+#define ITER 100000
 
 static RT_TASK tarea1;
 static RT_TASK tarea2;
