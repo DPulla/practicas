@@ -7,6 +7,7 @@
 #include <alchemy/sem.h>
 
 #define ITER 100000
+#define S_PRIO
 
 static RT_TASK tarea1;
 static RT_TASK tarea2;
@@ -37,5 +38,5 @@ int main(int argc, char* argv[]){
     rt_task_start(&tarea1, &tareaUno,0);
     rt_task_start(&tarea2, &tareaDos,0);
     printf("\n");
-    return -EINVAL;
+    return 0;
 }
