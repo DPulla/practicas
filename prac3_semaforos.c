@@ -7,7 +7,6 @@
 #include <alchemy/sem.h>
 
 #define ITER 100000
-#define S_PRIO
 
 static RT_TASK tarea1;
 static RT_TASK tarea2;
