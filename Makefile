@@ -4,7 +4,7 @@ CFLAGS := $(shell $(XENO_CONFIG) --posix --alchemy --cflags)
 LDFLAGS := $(shell $(XENO_CONFIG) --posix --alchemy --ldflags)
 
 CC := gcc
-EXECUTABLE := practica3
+EXECUTABLE := prac3_semaforos
 
 all: $(EXECUTABLE)
 
