@@ -37,5 +37,5 @@ int main(int argc, char* argv[]){
     rt_task_start(&tarea1, &tareaUno,0);
     rt_task_start(&tarea2, &tareaDos,0);
     printf("\n");
-    return 0;
+    return -EINVAL;
 }
