@@ -33,7 +33,7 @@ void tareaDos(void *arg){
 }
 
 int main(int argc, char* argv[]){
-    rt_sem_create(&sem, "sem", 0 , S_PULSE);
+    rt_sem_create(&sem, "sem", 0 , S_FIFO);
     rt_task_create(&tarea1, "tarea 1", 0 , 1, 0);
     rt_task_create(&tarea2, "tarea 2", 0 , 1, 0);
     rt_task_start(&tarea1, &tareaUno,0);
