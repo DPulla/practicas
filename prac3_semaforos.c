@@ -8,26 +8,28 @@
 
 #define ITER 100000
 
-sem_t sem1;
-
 static RT_TASK tarea1;
 static RT_TASK tarea2;
+static RT_SEM sem;
 
 int global = 0;
 
 void tareaUno(void *arg){
     for(int i=0; i < ITER; i++){
+        rt_sem_v(&sem);
         printf("Tarea 1 la variable global es %d -----\n", ++global);
     }
 }
 
 void tareaDos(void *arg){
     for(int i=0; i < ITER; i++){
+        rt_sem_v(&sem);
         printf("Tarea 2 la variable global es %d -----\n", --global);
     }
 }
 
 int main(int argc, char* argv[]){
+    rt_sem_create(&sem, "sem", 0 , 1, 0);
     rt_task_create(&tarea1, "tarea 1", 0 , 1, 0);
     rt_task_create(&tarea2, "tarea 2", 0 , 1, 0);
     rt_task_start(&tarea1, &tareaUno,0);
