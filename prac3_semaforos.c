@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
+#include <semaphore.h>
 
 #include <alchemy/task.h>
 #include <alchemy/timer.h>
